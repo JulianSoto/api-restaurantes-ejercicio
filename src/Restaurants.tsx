@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState<any[]>([]);
@@ -22,7 +23,9 @@ const Restaurants = () => {
               <article>
                 <img src={restaurant.logo} alt="" width="250" />
                 <div>
-                  <h1>{restaurant.name}</h1>
+                  <Link to={`restaurantes/${restaurant.slug}`}>
+                    <h1>{restaurant.name}</h1>
+                  </Link>
                   <span>{restaurant.rating} of 5</span>
                   <span>{restaurant.reviews.length} reviews</span>
                 </div>
